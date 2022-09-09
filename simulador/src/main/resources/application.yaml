@@ -1,0 +1,13 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/saks
+        username: postgres
+        password: 123
+    jpa:
+        hibernate:
+            ddlAuto: update
+        showSql: true
+    main:
+        allow-circular-references: true
+server:
+    port: 3333
