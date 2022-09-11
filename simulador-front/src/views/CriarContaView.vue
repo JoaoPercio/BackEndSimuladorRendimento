@@ -104,6 +104,7 @@
             variant="outline-secondary"
             class="w-100 my-1 mb-5 btn-lg"
             @click="register"
+            href="/login"
             >Voltar para o login</b-button
           >
         </b-form>

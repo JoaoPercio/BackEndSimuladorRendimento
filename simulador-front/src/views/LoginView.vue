@@ -57,6 +57,7 @@
             type="button"
             variant="outline-secondary"
             class="w-100 my-1 mb-5 btn-lg"
+            href="/criar-conta"
             >Não tenho conta</b-button
           >
         </b-form>

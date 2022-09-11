@@ -57,14 +57,16 @@
                 </b-col>
                 <b-col class="col-12 col-sm-6 mt-3 mt-sm-0">
                   <b-form-group label="Prazo" for="prazo"
-                    ><b-form-input
-                      id="prazo"
-                      v-model="form.prazo"
+                    ><input
                       type="number"
+                      id="prazo"
                       placeholder="0 meses"
+                      v-model="form.prazo"
+                      v-money="form.prazo !== '' ? period : ''"
+                      class="form-control"
                       required
                       autocomplete="off"
-                    ></b-form-input>
+                    />
                   </b-form-group>
                 </b-col>
               </b-row>
@@ -174,9 +176,17 @@ export default {
         thousands: ".",
         precision: 2,
       },
+      period: {
+        decimal: "",
+        thousands: "",
+        precision: 0,
+      },
     };
   },
-  directives: { money: VMoney },
+  directives: {
+    money: VMoney,
+    period: VMoney,
+  },
 };
 
 /*Função para formatar valores input string BRL para float
