@@ -1,0 +1,52 @@
+@import '../variables/fonts';
+
+.tags-input-root {
+  .tags-input span {
+    margin-right: inherit;
+  }
+
+  .tags-input-badge {
+    display: contents;
+  }
+
+  .tags-input-wrapper-default.tags-input {
+    padding: 5px;
+  }
+
+  .el-tag {
+    &.el-tag--small {
+      padding: 0 10;
+
+      .el-icon-close {
+        right: -1px;
+      }
+    }
+
+    &.el-tag--medium {
+      padding: 0 8px 0 10px;
+
+      .el-icon-close {
+        top: 0;
+        right: -3px;
+      }
+    }
+  }
+
+  .el-tag__close {
+    width: 20px;
+    height: 20px;
+    padding: 1px;
+    font-size: 9px;
+    font-weight: bold;
+
+    &::before {
+      content: '\2573';
+    }
+  }
+
+  input {
+    padding: 0;
+    margin: 8px;
+    font-size: $font-size-md;
+  }
+}

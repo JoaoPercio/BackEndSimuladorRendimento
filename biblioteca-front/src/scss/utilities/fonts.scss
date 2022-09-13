@@ -1,0 +1,19 @@
+@import '../variables/fonts';
+
+@each $name, $size in $font-sizes-map {
+  .fs--#{$name} {
+    font-size: #{$size} !important;
+  }
+}
+
+.fw--regular {
+  font-weight: $font-weight !important;
+}
+
+.fw--strong {
+  font-weight: $font-weight-strong !important;
+}
+
+.fw--strongest {
+  font-weight: $font-weight-strongest !important;
+}

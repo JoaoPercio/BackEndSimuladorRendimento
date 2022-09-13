@@ -1,0 +1,23 @@
+$font-family: 'Asap', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+
+$font-size-sm: 12px;
+$font-size-md: 14px;
+$font-size-lg: 16px;
+
+$font-line-height-sm: calc($font-size-sm * 2.25);
+$font-line-height-md: calc($font-size-md * 2.25);
+$font-line-height-lg: calc($font-size-lg * 2.25);
+
+$font-weight: 400;
+$font-weight-strong: 600;
+$font-weight-strongest: 700;
+
+$heading-font-size--sm: 18px;
+$heading-font-size--md: 22px;
+$heading-font-size--lg: 26px;
+
+$font-sizes-map: (
+  sm: $font-size-sm,
+  md: $font-size-md,
+  lg: $font-size-lg,
+) !default;

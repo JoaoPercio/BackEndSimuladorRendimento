@@ -1,0 +1,16 @@
+@import '../variables/colors';
+
+@each $name, $color in $colors-map {
+  .bg-color--#{$name} {
+    background-color: #{$color} !important;
+  }
+  .border--#{$name} {
+    border-color: #{$color} !important;
+  }
+}
+
+@each $name, $color in $text-colors-map {
+  .color--#{$name} {
+    color: #{$color} !important;
+  }
+}

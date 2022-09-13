@@ -1,0 +1,15 @@
+@import '../bootstrap/mixins';
+
+.el-popover__notifications {
+  width: 350px;
+  min-height: 50px;
+  margin-top: auto;
+
+  @include media-breakpoint-down(lg) {
+    width: 360px;
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 320px;
+  }
+}

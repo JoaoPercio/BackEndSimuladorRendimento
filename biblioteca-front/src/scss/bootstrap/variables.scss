@@ -1,0 +1,138 @@
+// Config
+$variable-prefix: bs- !default;
+
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #ddd !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$blue: #4582ec !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #d9534f !default;
+$orange: #fd7e14 !default;
+$yellow: #f0ad4e !default;
+$green: #02b875 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+$primary: #409eff !default;
+$secondary: #909399 !default;
+$success: #67c23a !default;
+$info: #909399 !default;
+$warning: #e6a23c !default;
+$danger: #f56c6c !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+
+// Grid
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+) !default;
+
+$enable-grid-classes: true !default;
+
+// Body
+$body-color: $gray-800 !default;
+
+// Options
+$min-contrast-ratio: 1.85 !default;
+
+// Fonts
+$font-family-serif: 'Asap', Roboto, Arial, Georgia, Cambria, 'Times New Roman', Times, serif !default;
+$font-family-sans-serif: 'Asap', -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', 'Helvetica Neue', Arial,
+  'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+
+$font-size-root: null !default;
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-xs: $font-size-base * 0.825 !default;
+$font-size-sm: $font-size-base * 0.875 !default;
+$font-size-lg: $font-size-base * 1.25 !default;
+$headings-font-weight: 500 !default;
+
+// Grid columns
+$grid-columns: 18 !default;
+$grid-row-columns: 6 !default;
+$grid-gutter-width: 1rem !default;
+
+// Container padding
+$container-padding-x: $grid-gutter-width * 0.5 !default;
+
+// Tables
+$table-bg-scale: 0 !default;
+$table-border-color: rgba(0, 0, 0, 0.1) !default;
+
+// Buttons
+$input-btn-padding-y: 0.5rem !default;
+$input-btn-padding-x: 1.1rem !default;
+$btn-font-size: 0.875rem !default;
+$btn-font-size-sm: 0.688rem !default;
+
+$btn-border-radius: 1.078em !default;
+$btn-border-radius-lg: 2.688em !default;
+$btn-border-radius-sm: 0.844em !default;
+
+$btn-font-family: $font-family-sans-serif !default;
+
+// Forms
+$input-padding-y: $input-btn-padding-y !default;
+$input-padding-x: $input-btn-padding-x !default;
+$input-color: $gray-600 !default;
+$input-border-color: rgba(0, 0, 0, 0.1) !default;
+$input-placeholder-color: rgba(0, 0, 0, 0.4) !default;
+$input-group-addon-bg: $gray-200 !default !default;
+
+// Dropdown
+$dropdown-link-active-bg: $gray-200 !default;
+$dropdown-link-active-color: inherit !default;
+
+// Select
+$form-select-color: $gray-700 !default;
+
+// Navs
+$nav-tabs-border-color: transparent !default;
+
+// Navbar
+$navbar-dark-color: rgba($white, 0.6) !default;
+$navbar-dark-hover-color: $white !default;
+$navbar-light-hover-color: $body-color !default;
+$navbar-light-active-color: $body-color !default;
+
+// Tooltips
+$tooltip-font-size: 11px !default;
+
+// Badges
+$badge-font-weight: 400 !default;
+$badge-padding-y: 0.6em !default;
+$badge-padding-x: 1.2em !default;
+
+// Alerts
+$alert-border-width: 0 !default;
+
+// Links
+$link-color: $blue !default;
+$link-decoration: underline !default;
+$link-shade-percentage: 20% !default;
+$link-hover-color: shift-color($link-color, $link-shade-percentage) !default;
+$link-hover-decoration: null !default;

@@ -1,0 +1,40 @@
+@import '../variables/colors';
+@import '../variables/borders';
+@import '../variables/utilities';
+
+.border--base {
+  border-color: $border-base-color;
+  border-style: $border-style-base;
+  border-width: $border-width-base;
+}
+
+@each $direction in $directions {
+  .border-#{$direction} {
+    @extend .border--base;
+    border-width: 0;
+    border-#{$direction}-width: $border-width-base !important;
+
+    &--none{
+      border: none;
+    }
+  }
+}
+
+@each $name, $color in $borders-map {
+  .border--#{$name} {
+    @extend .border--base;
+    border-color: $color !important;
+  }
+}
+
+.border-radius--sm {
+  border-radius: $border-radius-sm !important;
+}
+
+.border-radius--lg {
+  border-radius: $border-radius-lg !important;
+}
+
+.border-radius--round {
+  border-radius: $border-radius-round !important;
+}

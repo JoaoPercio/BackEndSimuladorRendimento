@@ -1,0 +1,12 @@
+$padding-sm: 3px !default;
+$padding-md: calc($padding-sm * 2) !default;
+$padding-lg: calc($padding-md * 2) !default;
+$padding-xl: calc($padding-lg * 3) !default;
+
+$paddings-map: (
+  none: 0,
+  sm: $padding-sm,
+  md: $padding-md,
+  lg: $padding-lg,
+  xl: $padding-xl,
+) !default;

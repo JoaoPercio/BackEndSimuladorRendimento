@@ -1,0 +1,78 @@
+$black: #000 !default;
+$gray-darker: #333333;
+$gray-dark: #454545;
+$gray: #666666;
+$gray-light: #999999;
+$gray-lighter: #CCCCCC;
+$white: #fff !default;
+
+$primary: #409eff !default;
+$primary-light: #d9ecff !default;
+$primary-lighter: #ecf5ff !default;
+
+$success: #67c23a !default;
+$success-light: #e1f3d8 !default;
+$success-lighter: #f0f9eb !default;
+
+$warning: #e6a23c !default;
+$warning-light: #faecd8 !default;
+$warning-lighter: #fdf6ec !default;
+
+$danger: #f56c6c !default;
+$danger-light: #fde2e2 !default;
+$danger-lighter: #fef0f0 !default;
+
+$info: #909399 !default;
+$info-light: #e9e9eb !default;
+$info-lighter: #f4f4f5 !default;
+
+$colors: $black, $white, $primary, $primary-light, $primary-lighter, $success, $success-light, $success-lighter,
+  $warning, $warning-light, $warning-lighter, $danger, $danger-light, $danger-lighter, $info, $info-light, $info-lighter !default;
+
+$colors-map: (
+  primary: $primary,
+  primary-light: $primary-light,
+  primary-lighter: $primary-lighter,
+  success: $success,
+  success-light: $success-light,
+  success-lighter: $success-lighter,
+  warning: $warning,
+  warning-light: $warning-light,
+  warning-lighter: $warning-lighter,
+  danger: $danger,
+  danger-light: $danger-light,
+  danger-lighter: $danger-lighter,
+  info: $info,
+  info-light: $info-light,
+  info-lighter: $info-lighter,
+) !default;
+
+/* Borders */
+
+$border-base-color: #dcdfe6 !default;
+$border-light-color: #e4e7ed !default;
+$border-lighter-color: #ebeef5 !default;
+
+$borders: (
+  base: $border-base-color,
+  light: $border-light-color,
+  lighter: $border-lighter-color,
+) !default;
+
+$borders-map: map-merge($colors-map, $borders);
+
+/* Text */
+
+$base-text-color: #303133 !default;
+$regular-text-color: #606266 !default;
+$secondary-text-color: #909399 !default;
+$placeholder-text-color: #c0c4cc !default;
+
+$text-colors: (
+  base: $base-text-color,
+  regular: $regular-text-color,
+  secondary: $secondary-text-color,
+  placeholder: $placeholder-text-color,
+) !default;
+
+$text-colors-map: map-merge($colors-map, $text-colors);

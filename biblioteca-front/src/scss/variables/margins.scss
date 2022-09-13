@@ -1,0 +1,12 @@
+$margin-sm: 3px !default;
+$margin-md: calc($margin-sm * 2) !default;
+$margin-lg: calc($margin-md * 2) !default;
+$margin-xl: calc($margin-lg * 2) !default;
+
+$margins-map: (
+  none: 0,
+  sm: $margin-sm,
+  md: $margin-md,
+  lg: $margin-lg,
+  xl: $margin-xl,
+) !default;

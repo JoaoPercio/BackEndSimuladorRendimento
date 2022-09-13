@@ -1,0 +1,42 @@
+/* Bootstrap config */
+/* DEPRECATED: only fixes for this block */
+@import './bootstrap/variables';
+@import 'bootstrap/scss/bootstrap';
+@import './bootstrap/custom';
+
+/* Font face ASAP from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap');
+
+/* Biblioteca config */
+@import './utilities/border';
+@import './utilities/colors';
+@import './utilities/container';
+@import './utilities/cursor';
+@import './utilities/display';
+@import './utilities/flex';
+@import './utilities/fonts';
+@import './utilities/header';
+@import './utilities/margin';
+@import './utilities/object';
+@import './utilities/opacity';
+@import './utilities/overflow';
+@import './utilities/padding';
+@import './utilities/scrollbar';
+@import './utilities/sizes';
+@import './utilities/small';
+@import './utilities/text';
+
+@import './reset';
+
+/* Element-ui customizations */
+@import 'chalk/avatar';
+@import 'chalk/button';
+@import 'chalk/dropdown';
+@import 'chalk/header';
+@import 'chalk/icon';
+@import 'chalk/image';
+@import 'chalk/notification';
+@import 'chalk/pagination';
+@import 'chalk/popover';
+@import 'chalk/tab';
+@import 'chalk/tag';

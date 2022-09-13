@@ -1,0 +1,64 @@
+@import '../bootstrap/container';
+@import '../bootstrap/mixins';
+
+.biblioteca-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+
+  &.biblioteca-container--md {
+    max-width: $container-max-width-md;
+
+    @include media-breakpoint-down(md) {
+      max-width: $container-max-width-sm;
+    }
+  }
+
+  &.biblioteca-container--lg {
+    max-width: $container-max-width-lg;
+
+    @include media-breakpoint-down(lg) {
+      max-width: $container-max-width-md;
+    }
+    @include media-breakpoint-down(md) {
+      max-width: $container-max-width-sm;
+    }
+  }
+
+  &.biblioteca-container--xl {
+    max-width: $container-max-width-xl;
+
+    @include media-breakpoint-down(xl) {
+      max-width: $container-max-width-lg;
+    }
+    @include media-breakpoint-down(lg) {
+      max-width: $container-max-width-md;
+    }
+    @include media-breakpoint-down(md) {
+      max-width: $container-max-width-sm;
+    }
+  }
+
+  &.biblioteca-container--xxl {
+    max-width: $container-max-width-xxl;
+
+    @include media-breakpoint-down(xxl) {
+      max-width: $container-max-width-xl;
+    }
+
+    @include media-breakpoint-down(xl) {
+      max-width: $container-max-width-lg;
+    }
+    @include media-breakpoint-down(lg) {
+      max-width: $container-max-width-md;
+    }
+    @include media-breakpoint-down(md) {
+      max-width: $container-max-width-sm;
+    }
+  }
+}

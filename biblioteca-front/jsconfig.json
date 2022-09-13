@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "target": "es6",
+    "module": "commonjs",
+    "experimentalDecorators": true
+  },
+  "exclude": ["node_modules"],
+  "typeAcquisition": {
+    "exclude": ["dotenv"]
+  }
+}

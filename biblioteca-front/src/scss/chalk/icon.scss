@@ -1,0 +1,32 @@
+@import '../variables/fonts';
+@import '../variables/colors';
+
+.el-icon {
+  $icon-sizes-map: (
+    sm: calc($font-size-sm * 1.5),
+    md: calc($font-size-md * 1.5),
+    lg: calc($font-size-lg * 1.5),
+    xl: calc($font-size-lg * 2),
+    xxl: calc($font-size-lg * 3.5),
+  ) !default;
+
+  & {
+    padding: 5px 2px;
+
+    @each $size, $value in $icon-sizes-map {
+      &.el-icon--#{$size} {
+        font-size: $value;
+      }
+    }
+
+    @each $color, $value in $colors-map {
+      &.el-icon--#{$color} {
+        color: #{$value};
+      }
+    }
+
+    &.el-icon--link {
+      cursor: pointer;
+    }
+  }
+}

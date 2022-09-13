@@ -1,0 +1,14 @@
+.overflow {
+  $props: auto, hidden, scroll;
+
+  @mixin overflow($axis) {
+    @each $prop in $props {
+      &-#{$axis}--#{$prop} {
+        overflow-#{$axis}: #{$prop} !important;
+      }
+    }
+  }
+
+  @include overflow(x);
+  @include overflow(y);
+}

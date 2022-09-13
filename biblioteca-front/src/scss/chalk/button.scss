@@ -1,0 +1,38 @@
+@import '../variables/fonts';
+
+.el-button {
+  $button-sizes-map: (
+    xs: 7px 15px,
+    sm: 8px 15px,
+    md: 10px 20px,
+    lg: 12px 20px,
+  ) !default;
+
+  $button-circle-sizes-map: (
+    xs: 7px,
+    sm: 8px,
+    md: 10px,
+    lg: 12px,
+  ) !default;
+
+  & {
+    font-size: $font-size-md;
+  }
+
+  &.el-button--xs {
+    font-size: $font-size-sm;
+    font-weight: $font-weight;
+  }
+
+  @each $size, $value in $button-sizes-map {
+    &:not(.is-circle).el-button--#{$size} {
+      padding: $value;
+    }
+  }
+
+  @each $size, $value in $button-circle-sizes-map {
+    &.is-circle.el-button--#{$size} {
+      padding: $value;
+    }
+  }
+}

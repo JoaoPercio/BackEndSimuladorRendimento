@@ -1,0 +1,178 @@
+@import '@/scss/bootstrap/variables';
+
+a,
+.btn-link,
+.alert-link {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover,
+  &:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.biblioteca-profile__img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: $white;
+  background-position: top center;
+}
+
+.navbar {
+  font-size: $font-size-sm;
+
+  &.bg-dark {
+    background-color: $success !important;
+  }
+
+  &.bg-light {
+    background-color: $white !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    &.navbar-fixed-top {
+      border-width: 0 0 1px;
+    }
+
+    &.navbar-fixed-bottom {
+      border-width: 1px 0 0;
+    }
+  }
+}
+
+p {
+  margin: 0 0 1em;
+  font-size: $font-size-sm;
+  font-family: $font-family-serif;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+footer {
+  font-size: $font-size-sm;
+}
+
+.lead {
+  color: $gray-600;
+}
+
+table,
+.table {
+  font-size: $font-size-sm;
+}
+
+.nav,
+.breadcrumb,
+.pagination {
+  font-size: $font-size-sm;
+}
+
+.dropdown-menu {
+  margin-top: 0;
+  font-size: $font-size-sm;
+}
+
+.alert {
+  color: $white;
+  font-size: $font-size-sm;
+
+  &,
+  p {
+    font-family: $font-family-sans-serif;
+  }
+
+  a,
+  .alert-link {
+    color: $white;
+    font-weight: 400;
+    text-decoration: underline;
+  }
+
+  @each $color, $value in $theme-colors {
+    &-#{$color} {
+      @if $enable-gradients {
+        background: $value linear-gradient($value, mix($body-bg, $value, 15%)) repeat-x;
+      } @else {
+        background-color: $value;
+      }
+    }
+  }
+
+  &-light {
+    &,
+    a,
+    .alert-link {
+      color: $body-color;
+    }
+  }
+}
+
+.badge {
+  &.bg-light {
+    color: $dark;
+  }
+}
+
+.form-field {
+  margin-bottom: 1.25rem;
+}
+
+.list-group {
+  font-size: $font-size-sm;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid $gray-300;
+
+  .nav-item + .nav-item {
+    margin-left: 0;
+  }
+
+  .nav-link,
+  .nav-link:focus {
+    margin-right: 0;
+    background-color: transparent;
+    border: none;
+    color: $body-color;
+    box-shadow: inset 0 -1px 0 #ddd;
+    transition: color 0.2s, box-shadow 0.2s;
+
+    &:hover {
+      background-color: transparent;
+      box-shadow: inset 0 -2px 0 $primary;
+      color: $primary;
+    }
+  }
+
+  .nav-link.active,
+  .nav-link.active:focus {
+    border: none;
+    box-shadow: inset 0 -2px 0 $primary;
+    color: $primary;
+
+    &:hover {
+      border: none;
+      color: $primary;
+    }
+  }
+
+  .nav-link.disabled {
+    box-shadow: inset 0 -1px 0 #ddd;
+  }
+
+  &.nav-justified {
+    .nav-link,
+    .nav-link:hover,
+    .nav-link:focus,
+    .nav-link.active,
+    .nav-link.active:hover,
+    .nav-link.active:focus {
+      border: none;
+    }
+  }
+}

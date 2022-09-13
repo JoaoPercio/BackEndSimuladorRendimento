@@ -1,0 +1,15 @@
+$sizes-map: (
+  sm: 28px,
+  md: 36px,
+  lg: 42px,
+) !default;
+
+.el-avatar {
+  @each $size, $value in $sizes-map {
+    &.el-avatar--#{$size} {
+      width: $value;
+      height: $value;
+      line-height: $value;
+    }
+  }
+}

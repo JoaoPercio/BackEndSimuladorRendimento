@@ -1,0 +1,11 @@
+@import '../variables/fonts';
+@import '../variables/margins';
+
+.biblioteca-small {
+  padding: 0;
+  display: inline;
+  color: $secondary-text-color;
+  font-size: $font-size-sm;
+  font-weight: $font-weight;
+  margin-bottom: $margin-sm;
+}

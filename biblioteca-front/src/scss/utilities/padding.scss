@@ -1,0 +1,31 @@
+@import '../variables/paddings';
+
+@each $size, $value in $paddings-map {
+  .p--#{$size} {
+    padding: $value !important;
+  }
+  .px--#{$size} {
+    padding-left: $value !important;
+    padding-right: $value !important;
+  }
+  .py--#{$size} {
+    padding-top: $value !important;
+    padding-bottom: $value !important;
+  }
+
+  .pt--#{$size} {
+    padding-top: $value !important;
+  }
+
+  .pr--#{$size} {
+    padding-right: $value !important;
+  }
+
+  .pb--#{$size} {
+    padding-bottom: $value !important;
+  }
+
+  .pl--#{$size} {
+    padding-left: $value !important;
+  }
+}
