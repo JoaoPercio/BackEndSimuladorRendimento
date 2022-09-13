@@ -2,7 +2,7 @@
   <biblioteca-single-content-layout container-size="lg">
     <template #content>
       <div class="d--flex justify-content--space-between align-items--center">
-        <biblioteca-header>Imoveis</biblioteca-header>
+        <biblioteca-header>Investimentos</biblioteca-header>
         <biblioteca-button @click="onCreateLivro">
           Adicionar Imovel
         </biblioteca-button>
@@ -13,11 +13,11 @@
             <td class="py-3 px-2">
               <biblioteca-header size="sm" class="d-flex align-item--center">
                 <biblioteca-livro-link :id="livro.id">
-                  {{ livro.titulo }}
+                  {{ livro.nome }}
                 </biblioteca-livro-link>
               </biblioteca-header>
               <biblioteca-p color="regular">
-                {{ livro.descricao }}
+                {{ livro.rentabilidade }} % anual
               </biblioteca-p>
             </td>
             <td class="align-middle text-end">

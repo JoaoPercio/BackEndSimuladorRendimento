@@ -95,13 +95,13 @@
             </b-card>
           </b-col>
         </b-row>
-        <b-row class="my-5">
-          <b-col class="col-12 col-md-6 col-xl-4 align-items-center mt-4">
-            <b-card class="card-border-1 shadow-sm">
-              <b-card-title>MB Prev-VII</b-card-title>
+        <b-row v-if="livroList && livroList.length > 0" class="my-5">
+          <b-col v-for="livro in livroList" :key="livro.id" class="col-12 col-md-6 col-xl-4 align-items-center mt-4">
+            <b-card v-if="livro.risco === 'Conservador'" class="card-border-1 shadow-sm">
+              <b-card-title>{{ livro.nome }}</b-card-title>
               <b-card-content>
-                <p><strong>Rentabilidade: </strong>0,56% ao mês</p>
-                <p><strong>Risco: </strong>Baixo</p>
+                <p><strong>Rentabilidade: </strong>{{ livro.rentabilidade }}% anual</p>
+                <p><strong>Risco: </strong>{{ livro.risco }}</p>
                 <p><strong>Investimento mensal:</strong></p>
                 <b-input-group prepend="R$">
                   <b-form-input
@@ -114,13 +114,11 @@
                 </b-input-group>
               </b-card-content>
             </b-card>
-          </b-col>
-          <b-col class="col-12 col-md-6 col-xl-4 align-items-center mt-4">
-            <b-card class="card-border-2 shadow-sm">
-              <b-card-title>Occam FIM</b-card-title>
+            <b-card v-if="livro.risco === 'Moderado'" class="card-border-2 shadow-sm">
+              <b-card-title>{{ livro.nome }}</b-card-title>
               <b-card-content>
-                <p><strong>Rentabilidade: </strong>1% ao mês</p>
-                <p><strong>Risco: </strong>Médio</p>
+                <p><strong>Rentabilidade: </strong>{{ livro.rentabilidade }}% anual</p>
+                <p><strong>Risco: </strong>{{ livro.risco }}</p>
                 <p><strong>Investimento mensal:</strong></p>
                 <b-input-group prepend="R$">
                   <b-form-input
@@ -133,13 +131,11 @@
                 </b-input-group>
               </b-card-content>
             </b-card>
-          </b-col>
-          <b-col class="col-12 col-md-6 col-xl-4 align-items-center mt-4">
-            <b-card class="card-border-3 shadow-sm">
-              <b-card-title>Saks Superprev FIM</b-card-title>
+            <b-card v-if="livro.risco === 'Agressivo'" class="card-border-3 shadow-sm">
+              <b-card-title>{{ livro.nome }}</b-card-title>
               <b-card-content>
-                <p><strong>Rentabilidade: </strong>3% ao mês</p>
-                <p><strong>Risco: </strong>Alto</p>
+                <p><strong>Rentabilidade: </strong>{{ livro.rentabilidade }}% anual</p>
+                <p><strong>Risco: </strong>{{ livro.risco }}</p>
                 <p><strong>Investimento mensal:</strong></p>
                 <b-input-group prepend="R$">
                   <b-form-input
@@ -163,6 +159,8 @@
 import BibliotecaSingleContentLayout from '@/layouts/SingleContentLayout.vue';
 // import BibliotecaHomeTabs from '@/modules/home/components/HomeTabs.vue';
 import { VMoney } from 'v-money';
+
+import { fetchLivros } from '@/modules/imovel/imovel.service';
 
 export default {
   name: 'BibliotecaHomeLayout',
@@ -193,7 +191,11 @@ export default {
         thousands: '',
         precision: 0,
       },
+      livroList: [],
     };
+  },
+  mounted() {
+    this.fetch();
   },
   methods: {
     limpar() {
@@ -201,6 +203,16 @@ export default {
       this.form.valorEntrada = '';
       this.form.valorObjetivo = '';
       this.form.prazo = '';
+    },
+    fetch() {
+      this.livroList = [];
+      fetchLivros()
+        .then(data => {
+          this.livroList = data.data;
+        })
+        .catch(() => {
+          this.livroList = [];
+        });
     },
   },
 };

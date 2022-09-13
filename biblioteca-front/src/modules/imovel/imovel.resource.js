@@ -1,6 +1,6 @@
 import { get, post, put, remove } from '@/helpers/http';
 
-const BASE_PATH = 'imoveis';
+const BASE_PATH = 'investimentos';
 
 export function fetchLivros() {
   return get(`${BASE_PATH}`);

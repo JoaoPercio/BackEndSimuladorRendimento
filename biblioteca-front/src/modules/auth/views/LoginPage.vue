@@ -13,6 +13,7 @@
               name="e-mail"
               rules="required|email"
               placeholder="E-mail"
+              autocomplete="off"
               :focus="true" />
           </div>
           <div class="mb-3">
@@ -21,7 +22,8 @@
               name="senha"
               type="password"
               rules="required|min:6"
-              placeholder="Senha" />
+              placeholder="Senha"
+              autocomplete="off" />
           </div>
           <div class="d-grid mb-3">
             <biblioteca-button
