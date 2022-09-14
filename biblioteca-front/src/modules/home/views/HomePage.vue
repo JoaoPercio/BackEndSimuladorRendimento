@@ -9,7 +9,7 @@
                 Simulador de Investimentos
               </b-card-title>
               <b-card-text class="mb-3 mx-4">
-                <b-form>
+                <b-form onsubmit="return false">
                   <b-row class="mb-4">
                     <b-col class="col-12 col-sm-6">
                       <b-form-group label="Nome" for="nome">
@@ -82,7 +82,7 @@
                     </b-col>
                     <b-col class="text-center">
                       <b-button
-                        type="submit"
+                        type="reset"
                         variant="outline-secondary"
                         class="w-100 btn-lg botao-limpar"
                         @click="limpar">
@@ -198,11 +198,28 @@ export default {
     this.fetch();
   },
   methods: {
+    formatarMoeda(valor) {
+      if (valor === '') {
+        this.valor = '0';
+      } else {
+        this.valor = this.valor.replace(/['.']/g, '');
+        this.valor = this.valor.replace(',', '.');
+        this.valor = parseFloat(this.valor);
+      }
+      return this.valor;
+    },
     limpar() {
       this.form.nome = '';
       this.form.valorEntrada = '';
       this.form.valorObjetivo = '';
       this.form.prazo = '';
+      this.form.investimentoMensal = '';
+    },
+    simular() {
+      // const temp = this.formatarMoeda(this.form.valorObjetivo) / this.formatarMoeda(this.form.prazo).tofixed(2);
+      let temp = '1.000,00';
+      temp = this.formatarMoeda(temp);
+      this.form.investimentoMensal = temp;
     },
     fetch() {
       this.livroList = [];
@@ -225,15 +242,15 @@ export default {
     font-family: "Plus Jakarta Sans", sans-serif !important;
   }
   .card-border-1 {
-    border-left: 10px solid #2dce64 !important;
+    border-left: 10px solid #27ae60 !important;
     width: 100%;
   }
   .card-border-2 {
-    border-left: 10px solid #e8d319 !important;
+    border-left: 10px solid #f1c40f !important;
     width: 100%;
   }
   .card-border-3 {
-    border-left: 10px solid #ce2d2d !important;
+    border-left: 10px solid #c0392b !important;
     width: 100%;
   }
   .botao-simular {
