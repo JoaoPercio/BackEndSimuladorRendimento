@@ -2,19 +2,8 @@
   <biblioteca-navbar style="background-color: #daecec !important">
     <template #right>
       <div class="d-flex align-items--center">
-<<<<<<< Updated upstream
-        <biblioteca-button style="border-radius: 0; border: none; background-color: #daecec !important;" @click="onLivros">
-          Imoveis
-        </biblioteca-button>
-        <biblioteca-button style="border-radius: 0; border: none; background-color: #daecec !important;" @click="onAdministradores">
-          Administradores
-        </biblioteca-button>
-        <biblioteca-button style="border-radius: 0; border: none; background-color: #daecec !important;" @click="onUsuarios">
-          Tipos de Imoveis
-=======
         <biblioteca-button style="border-radius: 0; border: none; background-color: #daecec !important;" @click="onUsuarios">
           Historico
->>>>>>> Stashed changes
         </biblioteca-button>
         <biblioteca-button style="border-radius: 0; border: none; background-color: #daecec !important;" @click="onLogout">
           Sair

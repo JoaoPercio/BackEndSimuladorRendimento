@@ -1,15 +1,6 @@
 <template>
   <biblioteca-single-content-layout container-size="lg">
     <template v-if="usuario" #content>
-<<<<<<< Updated upstream
-      <biblioteca-row class="d-flex align-items-center">
-        <biblioteca-col>
-          <biblioteca-header>
-            {{ usuario.nome }}
-          </biblioteca-header>
-        </biblioteca-col>
-      </biblioteca-row>
-=======
       <div class="container mt-2" style="border: 3px solid #5274d8; border-radius: 15px;box-shadow: 20px">
         <biblioteca-row class="d-flex align-items-center">
           <biblioteca-col>
@@ -35,7 +26,6 @@
           </biblioteca-col>
         </biblioteca-row>
       </div>
->>>>>>> Stashed changes
     </template>
   </biblioteca-single-content-layout>
 </template>
@@ -47,18 +37,12 @@ import { goToUsuarioNotFound } from '@/modules/tipoimovel/tipoimovel.routes';
 import { toastError } from '@/services/toastService';
 import { getUsuario } from '@/modules/tipoimovel/tipoimovel.service';
 import BibliotecaSingleContentLayout from '@/layouts/SingleContentLayout.vue';
-<<<<<<< Updated upstream
-=======
 import BibliotecaLivroLink from '@/modules/imovel/components/ImovelLink.vue';
->>>>>>> Stashed changes
 
 export default {
   name: 'BibliotecaUsuarioViewPage',
   components: {
-<<<<<<< Updated upstream
-=======
     BibliotecaLivroLink,
->>>>>>> Stashed changes
     BibliotecaSingleContentLayout,
   },
   data() {

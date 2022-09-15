@@ -1,10 +1,6 @@
 import { get, put, post, remove } from '@/helpers/http';
 
-<<<<<<< Updated upstream
-const BASE_PATH = 'tipos-imoveis';
-=======
 const BASE_PATH = 'historicos';
->>>>>>> Stashed changes
 
 export function fetchUsuarios() {
   return get(`${BASE_PATH}`);
