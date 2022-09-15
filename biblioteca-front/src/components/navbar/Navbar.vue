@@ -5,7 +5,7 @@
         <a class="navbar-brand" href="/">
           <img
             alt="Biblioteca"
-            height="36"
+            height="30"
             src="@/assets/images/logo.png">
         </a>
       </slot>

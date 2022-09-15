@@ -1,10 +1,10 @@
 <template>
   <biblioteca-single-content-layout container-size="lg">
     <template #content>
-      <div class="container mt-2">
+      <div class="container">
         <b-row>
           <b-col col="12">
-            <b-card class="mt-5 mx-lg-5 shadow-sm">
+            <b-card class="mt-2 mx-lg-5 shadow-sm">
               <b-card-title class="text-align-center my-3 ms-4">
                 Simulador de Investimentos
               </b-card-title>
@@ -192,6 +192,13 @@ export default {
         precision: 0,
       },
       livroList: [],
+      calculadora: {
+        nomeObjetivo: '',
+        aporteInicial: '',
+        valorTotal: '',
+        tempo: '',
+        aporteMensal: '',
+      },
     };
   },
   mounted() {
@@ -199,14 +206,15 @@ export default {
   },
   methods: {
     formatarMoeda(valor) {
-      if (valor === '') {
-        this.valor = '0';
+      let temp = valor;
+      if (temp === '') {
+        temp = '0';
       } else {
-        this.valor = this.valor.replace(/['.']/g, '');
-        this.valor = this.valor.replace(',', '.');
-        this.valor = parseFloat(this.valor);
+        temp = temp.replace(/['.']/g, '');
+        temp = temp.replace(',', '.');
+        temp = parseFloat(temp);
       }
-      return this.valor;
+      return temp;
     },
     limpar() {
       this.form.nome = '';
@@ -216,10 +224,16 @@ export default {
       this.form.investimentoMensal = '';
     },
     simular() {
-      // const temp = this.formatarMoeda(this.form.valorObjetivo) / this.formatarMoeda(this.form.prazo).tofixed(2);
-      let temp = '1.000,00';
-      temp = this.formatarMoeda(temp);
-      this.form.investimentoMensal = temp;
+      if (this.form.nome !== '' && this.form.valorEntrada !== '' && this.form.valorObjetivo !== '' && this.form.prazo !== '') {
+        this.calculadora.nomeObjetivo = this.form.nome;
+        this.calculadora.aporteInicial = this.formatarMoeda(this.form.valorEntrada);
+        this.calculadora.valorTotal = this.formatarMoeda(this.form.valorObjetivo);
+        this.calculadora.tempo = parseInt(this.form.prazo);
+        // Resultado
+        this.form.investimentoMensal = this.calculadora.aporteInicial;
+      } else {
+        this.form.investimentoMensal = '';
+      }
     },
     fetch() {
       this.livroList = [];
