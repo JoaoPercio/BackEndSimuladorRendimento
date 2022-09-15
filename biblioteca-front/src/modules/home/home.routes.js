@@ -11,3 +11,9 @@ export default [
     component: () => import('@/modules/home/views/HomeComponents.vue'),
   },
 ];
+
+export function goToHome($router) {
+  $router.push({
+    name: HOME_URL.path.name,
+  });
+}
