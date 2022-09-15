@@ -1,6 +1,7 @@
 <template>
   <biblioteca-single-content-layout container-size="lg">
     <template v-if="usuario" #content>
+<<<<<<< Updated upstream
       <biblioteca-row class="d-flex align-items-center">
         <biblioteca-col>
           <biblioteca-header>
@@ -8,6 +9,33 @@
           </biblioteca-header>
         </biblioteca-col>
       </biblioteca-row>
+=======
+      <div class="container mt-2" style="border: 3px solid #5274d8; border-radius: 15px;box-shadow: 20px">
+        <biblioteca-row class="d-flex align-items-center">
+          <biblioteca-col>
+            <biblioteca-header style="color: #5274d8">
+              {{ usuario.nome }}
+            </biblioteca-header>
+            <biblioteca-p> <span style="color: #4562ba; font-weight: 800;">Valor de entrada:</span> R$ {{ usuario.entrada }} </biblioteca-p>
+            <biblioteca-p> <span style="color: #4562ba; font-weight: 800;">Valor Estimado: </span> R${{ usuario.valorEstimado }} </biblioteca-p>
+            <biblioteca-p> <span style="color: #4562ba; font-weight: 800;">Tempo Para concluir objetivo: </span> {{ usuario.tempo }}  meses</biblioteca-p>
+            <biblioteca-p> <span style="color: #4562ba; font-weight: 800;">Quantidade mensal a ser investida:</span> R$ {{ usuario.resultado }}</biblioteca-p>
+            <biblioteca-header style="color: #5274d8">
+              Investimento
+            </biblioteca-header>
+            <biblioteca-livro-link :id="usuario.investimento.id" target="_blank" style="text-decoration: none;">
+              <span style="color: #4562ba; font-weight: 800;"> Investimento: </span> {{ usuario.investimento.nome }}⠀⠀⠀
+            </biblioteca-livro-link>
+            <biblioteca-livro-link :id="usuario.investimento.id" target="_blank" style="text-decoration: none;">
+              <span style="color: #4562ba; font-weight: 800;">risco: </span>{{ usuario.investimento.risco }}⠀⠀⠀
+            </biblioteca-livro-link>
+            <biblioteca-livro-link :id="usuario.investimento.id" target="_blank" style="text-decoration: none;">
+              <span style="color: #4562ba; font-weight: 800;"> rentabilidade: </span> {{ usuario.investimento.rentabilidade }} %
+            </biblioteca-livro-link>
+          </biblioteca-col>
+        </biblioteca-row>
+      </div>
+>>>>>>> Stashed changes
     </template>
   </biblioteca-single-content-layout>
 </template>
@@ -19,10 +47,18 @@ import { goToUsuarioNotFound } from '@/modules/tipoimovel/tipoimovel.routes';
 import { toastError } from '@/services/toastService';
 import { getUsuario } from '@/modules/tipoimovel/tipoimovel.service';
 import BibliotecaSingleContentLayout from '@/layouts/SingleContentLayout.vue';
+<<<<<<< Updated upstream
+=======
+import BibliotecaLivroLink from '@/modules/imovel/components/ImovelLink.vue';
+>>>>>>> Stashed changes
 
 export default {
   name: 'BibliotecaUsuarioViewPage',
   components: {
+<<<<<<< Updated upstream
+=======
+    BibliotecaLivroLink,
+>>>>>>> Stashed changes
     BibliotecaSingleContentLayout,
   },
   data() {

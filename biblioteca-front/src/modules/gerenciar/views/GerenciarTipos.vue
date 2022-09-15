@@ -2,10 +2,14 @@
   <biblioteca-single-content-layout container-size="lg">
     <template #content>
       <div class="d--flex justify-content--space-between align-items--center">
+<<<<<<< Updated upstream
         <biblioteca-header>Tipos de imoveis</biblioteca-header>
         <biblioteca-button @click="onCreateUsuario">
           Adicionar Tipo de Imovel
         </biblioteca-button>
+=======
+        <biblioteca-header style="text-aling: center; color: #5274d8; font-weight: 600 !important">Historico de simulações</biblioteca-header>
+>>>>>>> Stashed changes
       </div>
       <table v-if="usuarioList && usuarioList.length > 0" class="table">
         <tbody>
@@ -42,7 +46,11 @@
               </el-dropdown>
               <biblioteca-modal-delete
                 v-if="showModal(usuario)"
+<<<<<<< Updated upstream
                 content="Você realmente deseja excluir o usuário?"
+=======
+                content="Você realmente deseja excluir a simulação?"
+>>>>>>> Stashed changes
                 @close="setDeleteUsuario(null)"
                 @confirm="onDeleteUsuario(usuario)">
               </biblioteca-modal-delete>
@@ -50,7 +58,11 @@
           </tr>
         </tbody>
       </table>
+<<<<<<< Updated upstream
       <biblioteca-p v-else class="opacity--50 my--lg">( Sem usuários )</biblioteca-p>
+=======
+      <biblioteca-p v-else class="opacity--50 my--lg">( Sem simulações salvas )</biblioteca-p>
+>>>>>>> Stashed changes
     </template>
   </biblioteca-single-content-layout>
 </template>
@@ -103,7 +115,11 @@ export default {
         .then(() => {
           this.$router.go(0);
         })
+<<<<<<< Updated upstream
         .catch(() => toastError('Não foi possível excluir o usuário'));
+=======
+        .catch(() => toastError('Não foi possível excluir a simulação'));
+>>>>>>> Stashed changes
     },
   },
 };

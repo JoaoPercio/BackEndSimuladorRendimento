@@ -11870,6 +11870,14 @@
   "resolved" "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz"
   "version" "8.3.2"
 
+<<<<<<< Updated upstream
+=======
+"v-money@^0.8.1":
+  "integrity" "sha512-raz87AP5F2YEpv1GAocI3SC/y9af1+TQeZQIhAK5UNovho6dnh6RQBa5UG8ZNC+BPLpUh5VECi7EWTjr4+4s1g=="
+  "resolved" "https://registry.npmjs.org/v-money/-/v-money-0.8.1.tgz"
+  "version" "0.8.1"
+
+>>>>>>> Stashed changes
 "v8-compile-cache@^2.0.3":
   "integrity" "sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA=="
   "resolved" "https://registry.npmjs.org/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz"

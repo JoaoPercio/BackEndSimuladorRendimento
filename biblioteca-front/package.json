@@ -23,6 +23,10 @@
     "file": "^0.2.2",
     "js-cookie": "^2.2.1",
     "moment": "^2.22.2",
+<<<<<<< Updated upstream
+=======
+    "v-money": "^0.8.1",
+>>>>>>> Stashed changes
     "vee-validate": "^3.4.13",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
