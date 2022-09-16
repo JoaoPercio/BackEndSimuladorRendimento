@@ -2,10 +2,10 @@
   <biblioteca-single-content-layout container-size="lg">
     <template #content>
       <biblioteca-header v-if="isEditing">
-        Editar Tipo Imovel
+        Editar Objetivo
       </biblioteca-header>
       <biblioteca-header v-else>
-        Criar Tipo Imovel
+        Criar Objetivo
       </biblioteca-header>
       <biblioteca-usuario-edit-inputs @save="saveUsuario" />
     </template>

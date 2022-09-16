@@ -2,7 +2,7 @@
   <biblioteca-single-content-layout container-size="lg">
     <template #content>
       <div class="d--flex justify-content--space-between align-items--center">
-        <biblioteca-header style="text-aling: center; color: #5274d8; font-weight: 600 !important">Historico de simulações</biblioteca-header>
+        <biblioteca-header style="text-aling: center; color: #132644; font-weight: 600 !important">Histórico de objetivos</biblioteca-header>
       </div>
       <table v-if="usuarioList && usuarioList.length > 0" class="table">
         <tbody>

@@ -103,15 +103,7 @@
                 <p><strong>Rentabilidade: </strong>{{ livro.rentabilidade }}% anual</p>
                 <p><strong>Risco: </strong>{{ livro.risco }}</p>
                 <p><strong>Investimento mensal:</strong></p>
-                <b-input-group prepend="R$">
-                  <b-form-input
-                    id="investimentoMensal"
-                    v-model="form.investimentoMensal"
-                    type="text"
-                    placeholder="0,00"
-                    disabled>
-                  </b-form-input>
-                </b-input-group>
+                <p>R$ {{ calcular(livro.rentabilidade) }}</p>
               </b-card-content>
             </b-card>
             <b-card v-if="livro.risco === 'Moderado'" class="card-border-2 shadow-sm">
@@ -120,15 +112,7 @@
                 <p><strong>Rentabilidade: </strong>{{ livro.rentabilidade }}% anual</p>
                 <p><strong>Risco: </strong>{{ livro.risco }}</p>
                 <p><strong>Investimento mensal:</strong></p>
-                <b-input-group prepend="R$">
-                  <b-form-input
-                    id="investimentoMensal"
-                    v-model="form.investimentoMensal"
-                    type="text"
-                    placeholder="0,00"
-                    disabled>
-                  </b-form-input>
-                </b-input-group>
+                <p>R$ {{ calcular(livro.rentabilidade) }}</p>
               </b-card-content>
             </b-card>
             <b-card v-if="livro.risco === 'Agressivo'" class="card-border-3 shadow-sm">
@@ -205,6 +189,13 @@ export default {
     this.fetch();
   },
   methods: {
+    calcular(rendimento) {
+      const rentabilidade = rendimento / 100;
+      const aporteMensal = (this.calculadora.valorTotal
+      - (this.calculadora.aporteInicial * (1 + rentabilidade) ** this.calculadora.tempo))
+      / ((1 + rentabilidade) ** this.calculadora.tempo - 1 + rentabilidade);
+      return aporteMensal.toFixed(2);
+    },
     formatarMoeda(valor) {
       let temp = valor;
       if (temp === '') {
