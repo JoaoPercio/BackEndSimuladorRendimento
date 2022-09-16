@@ -121,15 +121,7 @@
                 <p><strong>Rentabilidade: </strong>{{ livro.rentabilidade }}% anual</p>
                 <p><strong>Risco: </strong>{{ livro.risco }}</p>
                 <p><strong>Investimento mensal:</strong></p>
-                <b-input-group prepend="R$">
-                  <b-form-input
-                    id="investimentoMensal"
-                    v-model="form.investimentoMensal"
-                    type="text"
-                    placeholder="0,00"
-                    disabled>
-                  </b-form-input>
-                </b-input-group>
+                <p>R$ {{ calcular(livro.rentabilidade) }}</p>
               </b-card-content>
             </b-card>
           </b-col>
@@ -190,10 +182,14 @@ export default {
   },
   methods: {
     calcular(rendimento) {
-      const rentabilidade = rendimento / 100;
+      if (this.calculadora.nomeObjetivo === '') {
+        return '0,00';
+      }
+      let rentabilidade = rendimento / 100;
+      rentabilidade /= 12; // mensal
       const aporteMensal = (this.calculadora.valorTotal
       - (this.calculadora.aporteInicial * (1 + rentabilidade) ** this.calculadora.tempo))
-      / ((1 + rentabilidade) ** this.calculadora.tempo - 1 + rentabilidade);
+      / (((1 + rentabilidade) ** this.calculadora.tempo - 1) / rentabilidade);
       return aporteMensal.toFixed(2);
     },
     formatarMoeda(valor) {
@@ -213,6 +209,10 @@ export default {
       this.form.valorObjetivo = '';
       this.form.prazo = '';
       this.form.investimentoMensal = '';
+      this.calculadora.nomeObjetivo = '';
+      this.calculadora.aporteInicial = '';
+      this.calculadora.valorTotal = '';
+      this.calculadora.tempo = '';
     },
     simular() {
       if (this.form.nome !== '' && this.form.valorEntrada !== '' && this.form.valorObjetivo !== '' && this.form.prazo !== '') {
