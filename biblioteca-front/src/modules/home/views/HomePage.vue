@@ -98,7 +98,7 @@
         <b-row v-if="livroList && livroList.length > 0" class="my-5">
           <b-col v-for="livro in livroList" :key="livro.id" class="col-12 col-md-6 col-xl-4 align-items-center mt-4">
             <b-card v-if="livro.risco === 'Conservador'" class="card-border-1 shadow-sm">
-              <b-card-title>{{ livro.nome }}</b-card-title>
+              <b-card-title>{{ livro.nome }} <img src="../../../assets/images/save.png" style="width: 40px; float: right" /></b-card-title>
               <b-card-content>
                 <p><strong>Rentabilidade: </strong>{{ livro.rentabilidade }}% anual</p>
                 <p><strong>Risco: </strong>{{ livro.risco }}</p>
@@ -107,7 +107,7 @@
               </b-card-content>
             </b-card>
             <b-card v-if="livro.risco === 'Moderado'" class="card-border-2 shadow-sm">
-              <b-card-title>{{ livro.nome }}</b-card-title>
+              <b-card-title>{{ livro.nome }} <img src="../../../assets/images/save.png" style="width: 40px; float: right" /></b-card-title>
               <b-card-content>
                 <p><strong>Rentabilidade: </strong>{{ livro.rentabilidade }}% anual</p>
                 <p><strong>Risco: </strong>{{ livro.risco }}</p>
@@ -116,7 +116,7 @@
               </b-card-content>
             </b-card>
             <b-card v-if="livro.risco === 'Agressivo'" class="card-border-3 shadow-sm">
-              <b-card-title>{{ livro.nome }}</b-card-title>
+              <b-card-title>{{ livro.nome }} <img src="../../../assets/images/save.png" style="width: 40px; float: right" /></b-card-title>
               <b-card-content>
                 <p><strong>Rentabilidade: </strong>{{ livro.rentabilidade }}% anual</p>
                 <p><strong>Risco: </strong>{{ livro.risco }}</p>
